@@ -1,0 +1,11 @@
+# Folders
+settings
+Debug
+ewarm
+.ssh
+
+# Files
+*.o
+*.a
+*.bin
+*.map
