@@ -20,29 +20,30 @@ Validar a infraestrutura laboratorial necessária para os próximos experimentos
 
 3. Depois de instalado e devidamente licenciado a estrutura de diretório foi criada.
 
-4. Agora devemos criar um projeto clicando no local indicado na imagem abaixo.
+![CSW41 Repository Schema](https://github.com/lukaltk/CSW41/blob/df4e278997e2caf61aa80a5a2e31f03619c2433e/lukaltk_CSW41/Lab1/screenshots/folders.PNG)
 
-<img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/48101913/135729064-b3a82a53-d6ac-4f9e-a2bb-83561e090479.PNG" width="854" height="480">
+4. Com isso no IAR foi criado o projeto do laboratório 1.
 
-5. Selecione o projeto C++ e clique em OK.
-<img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/48101913/135729105-e6f9e23b-714c-46ef-b134-9b0b5592381f.png" width="854" height="480">
+![IAR Creating Project](https://github.com/lukaltk/CSW41/blob/df4e278997e2caf61aa80a5a2e31f03619c2433e/lukaltk_CSW41/Lab1/screenshots/createProject.png)
 
-6. Agora vá em opções do projeto.
+5. Foi selecionado o projeto em C++.
 
-<img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/48101913/135730626-906b95ea-8912-4d91-92f0-b6a4b1e68ec4.png" width="854" height="480">
+![C++ project](https://github.com/lukaltk/CSW41/blob/df4e278997e2caf61aa80a5a2e31f03619c2433e/lukaltk_CSW41/Lab1/screenshots/projectType.png)
 
-7. Coloque o processador em ARM CORTEX M4 e habilite o coprocessador de ponto flutuante com precisão simples.
+6. Após a criação do projeto foi configurado.
 
-<img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/48101913/135730692-d58b281f-23e1-41a9-bdbc-5bcac8ca1e87.png" width="854" height="480">
+![IAR Project Config](https://github.com/lukaltk/CSW41/blob/df4e278997e2caf61aa80a5a2e31f03619c2433e/lukaltk_CSW41/Lab1/screenshots/configProject.png)
 
-<img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/48101913/135730708-c87e8776-f74b-4b60-879d-0d03e4397925.png" width="854" height="480">
+7. E configurado da seguinte forma:
 
-8. Depois foi escrito o código inicial um famigerado "Hello World" e aperte em **_Download and Debug_**.
+![Cortex-M4 Config](https://github.com/lukaltk/CSW41/blob/df4e278997e2caf61aa80a5a2e31f03619c2433e/lukaltk_CSW41/Lab1/screenshots/cortexM4.PNG)
+![Floating-point Settings](https://github.com/lukaltk/CSW41/blob/df4e278997e2caf61aa80a5a2e31f03619c2433e/lukaltk_CSW41/Lab1/screenshots/32-bit.PNG)
+![Simulator Config](https://github.com/lukaltk/CSW41/blob/df4e278997e2caf61aa80a5a2e31f03619c2433e/lukaltk_CSW41/Lab1/screenshots/simulator.PNG)
 
-<img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/48101913/135731201-d6749744-5efc-4bd0-aebb-e4a42bb2f084.png" width="854" height="480">
+8. Depois foi escrito o código inicial "Hello World" e para rodar o projeto é utilizado o botão **_Download and Debug_**.
 
-A saída pode ser vista no Terminal I/O conforme a figura abaixo.
+![Run Project](https://github.com/lukaltk/CSW41/blob/df4e278997e2caf61aa80a5a2e31f03619c2433e/lukaltk_CSW41/Lab1/screenshots/runProject.PNG)
 
-<img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/48101913/135731245-63758c3a-8cc5-455d-a131-2c115c2a15d5.png" width="854" height="480">
+A janela Disassembly indica as instruções que o projeto está executando. E saída pode ser vista no Terminal I/O.
 
-A saída também pode ser acompanhada no dissassembly do código conforme pode ser visto no código acima.
+![Project Output](https://github.com/lukaltk/CSW41/blob/df4e278997e2caf61aa80a5a2e31f03619c2433e/lukaltk_CSW41/Lab1/screenshots/output.PNG)
