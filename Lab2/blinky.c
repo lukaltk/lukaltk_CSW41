@@ -71,12 +71,13 @@ int main(void) {
     // Enable the GPIO pin for the LED (PN0).  Set the direction as output, and
     // enable the GPIO pin for digital function.
     GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, GPIO_PIN_0);
+    GPIOPadConfigSet(GPIO_PORTJ_BASE, GPIO_PIN_0, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPD);
     GPIOPinTypeGPIOInput(GPIO_PORTJ_BASE, GPIO_PIN_0);
-    //GPIOPadConfigSet(GPIO_PORTJ_BASE, GPIO_PIN_0, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPD);
+
     
     setupSystick();
     
-    volatile int buttonFlag = 0;
+    volatile int buttonFlag = 1;
     
     printf("Start!\n");
     
@@ -89,7 +90,7 @@ int main(void) {
       } else if(flag >= 1000) {
         buttonFlag = GPIOPinRead(GPIO_PORTJ_BASE, GPIO_PIN_0);
         
-        if(buttonFlag == 1){
+        if(buttonFlag == 0){
           GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_0, 0x0);
           int tempo = flag - 1000;
           printf("Tempo: %d ms\n", tempo);
