@@ -77,8 +77,6 @@ int main(void) {
     
     setupSystick();
     
-    volatile int buttonFlag = 1;
-    
     printf("Start!\n");
     
     while(1) {
@@ -88,9 +86,8 @@ int main(void) {
         
         
       } else if(flag >= 1000) {
-        buttonFlag = GPIOPinRead(GPIO_PORTJ_BASE, GPIO_PIN_0);
         
-        if(buttonFlag == 0){
+        if(!GPIOPinRead(GPIO_PORTJ_BASE, GPIO_PIN_0)){
           GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_0, 0x0);
           int tempo = flag - 1000;
           printf("Tempo: %d ms\n", tempo);
