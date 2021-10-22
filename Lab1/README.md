@@ -8,7 +8,7 @@
 - Email: luka@alunos.utfpr.edu.br
 
 
-# Lab1
+# Lab1 - Infraestrutura de Laboratório
 
 #### Objetivo
 Validar a infraestrutura laboratorial necessária para os próximos experimentos: IAR e Github

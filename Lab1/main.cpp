@@ -2,7 +2,8 @@
 
 int main() {
   
-  std::cout << "Hello World";
+  std::cout << "Start!\n";
+  std::cout << "Tempo de 3s esgotado!";
   
   return 0;
 }
