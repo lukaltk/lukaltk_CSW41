@@ -214,7 +214,8 @@
                 </option>
                 <option>
                     <name>CCDefines</name>
-                    <state></state>
+                    <state>PART_TM4C1294NCPDT</state>
+                    <state>TARGET_IS_TM4C129_RA1</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -651,7 +652,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>48</hasPrio>
+                <hasPrio>1</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
