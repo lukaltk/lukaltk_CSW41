@@ -48,7 +48,7 @@
                 </option>
                 <option>
                     <name>OGCoreOrChip</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GRuntimeLibSelect</name>
@@ -66,7 +66,7 @@
                 </option>
                 <option>
                     <name>OGProductVersion</name>
-                    <state>5.10.0.159</state>
+                    <state>4.20A</state>
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
@@ -74,7 +74,7 @@
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
-                    <state>Default	None</state>
+                    <state>TM4C129ENCPDT	TexasInstruments TM4C129ENCPDT</state>
                 </option>
                 <option>
                     <name>GenLowLevelInterface</name>
@@ -120,7 +120,7 @@
                 </option>
                 <option>
                     <name>GFPUDeviceSlave</name>
-                    <state>Default	None</state>
+                    <state>TM4C129ENCPDT	TexasInstruments TM4C129ENCPDT</state>
                 </option>
                 <option>
                     <name>FPU2</name>
@@ -351,7 +351,7 @@
                 </option>
                 <option>
                     <name>CCOptLevel</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>CCOptStrategy</name>
@@ -360,7 +360,7 @@
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>CCPosIndRopi</name>
@@ -376,7 +376,7 @@
                 </option>
                 <option>
                     <name>IccLang</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>IccCDialect</name>
@@ -579,7 +579,7 @@
                 </option>
                 <option>
                     <name>AOutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.o</state>
                 </option>
                 <option>
                     <name>ALimitErrorsCheck</name>
@@ -671,16 +671,16 @@
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
-                    <name>IlinkOutputFile</name>
-                    <state>$PROJ_FNAME$.out</state>
-                </option>
-                <option>
                     <name>IlinkLibIOConfig</name>
                     <state>1</state>
                 </option>
                 <option>
                     <name>IlinkInputFileSlave</name>
                     <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkOutputFile</name>
+                    <state>$PROJ_FNAME$.out</state>
                 </option>
                 <option>
                     <name>IlinkDebugInfoEnable</name>
@@ -744,7 +744,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$TOOLKIT_DIR$\CONFIG\generic_cortex.icf</state>
+                    <state>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C129ENC.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -1108,7 +1108,7 @@
                 </option>
                 <option>
                     <name>OGProductVersion</name>
-                    <state>5.10.0.159</state>
+                    <state>4.20A</state>
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
@@ -1398,7 +1398,7 @@
                 <option>
                     <name>CCOptStrategy</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
@@ -1418,7 +1418,7 @@
                 </option>
                 <option>
                     <name>IccLang</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>IccCDialect</name>
@@ -1451,7 +1451,7 @@
                 <option>
                     <name>CCOptStrategySlave</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCGuardCalls</name>
@@ -1713,16 +1713,16 @@
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
-                    <name>IlinkOutputFile</name>
-                    <state>$PROJ_FNAME$.out</state>
-                </option>
-                <option>
                     <name>IlinkLibIOConfig</name>
                     <state>1</state>
                 </option>
                 <option>
                     <name>IlinkInputFileSlave</name>
                     <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkOutputFile</name>
+                    <state>$PROJ_FNAME$.out</state>
                 </option>
                 <option>
                     <name>IlinkDebugInfoEnable</name>
@@ -2085,6 +2085,9 @@
             </data>
         </settings>
     </configuration>
+    <file>
+        <name>$PROJ_DIR$\histogram.s</name>
+    </file>
     <file>
         <name>$PROJ_DIR$\main.cpp</name>
     </file>
