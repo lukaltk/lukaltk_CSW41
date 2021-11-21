@@ -2840,30 +2840,9 @@
         </settings>
     </configuration>
     <file>
-        <name>$PROJ_DIR$\blinky.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\cmsis_compiler.h</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\cmsis_iccarm.h</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\cmsis_version.h</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\core_cm4.h</name>
+        <name>$PROJ_DIR$\main.cpp</name>
     </file>
     <file>
         <name>$PROJ_DIR$\startup_ewarm.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\..\Lab4\system_TM4C1294.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\..\Lab4\system_TM4C1294.h</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\..\Lab4\TM4C1294NCPDT.h</name>
     </file>
 </project>

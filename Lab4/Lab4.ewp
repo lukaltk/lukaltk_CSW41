@@ -214,8 +214,9 @@
                 </option>
                 <option>
                     <name>CCDefines</name>
+                    <state>ewarm</state>
                     <state>PART_TM4C1294NCPDT</state>
-                    <state>TARGET_IS_TM4C129_RA1</state>
+                    <state>TARGET_IS_TM4C129_RA2</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -276,7 +277,7 @@
                 <option>
                     <name>CCAllowList</name>
                     <version>1</version>
-                    <state>00000000</state>
+                    <state>11111110</state>
                 </option>
                 <option>
                     <name>CCDebugInfo</name>
@@ -336,7 +337,7 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state>$PROJ_DIR$\..\TivaWare_C_Series-2.2.0.295</state>
+                    <state>$PROJ_DIR$\..\..\lukaltk_CSW41\TivaWare_C_Series-2.2.0.295</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -352,16 +353,16 @@
                 </option>
                 <option>
                     <name>CCOptLevel</name>
-                    <state>1</state>
+                    <state>3</state>
                 </option>
                 <option>
                     <name>CCOptStrategy</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
-                    <state>1</state>
+                    <state>3</state>
                 </option>
                 <option>
                     <name>CCPosIndRopi</name>
@@ -410,7 +411,7 @@
                 <option>
                     <name>CCOptStrategySlave</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCGuardCalls</name>
@@ -634,7 +635,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state>Lab2.srec</state>
+                    <state>Labr4.srec</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -652,7 +653,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>128</hasPrio>
+                <hasPrio>1</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
@@ -793,7 +794,7 @@
                 </option>
                 <option>
                     <name>IlinkAdditionalLibs</name>
-                    <state>$PROJ_DIR$\..\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</state>
+                    <state>$PROJ_DIR$\..\..\lukaltk_CSW41\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</state>
                 </option>
                 <option>
                     <name>IlinkOverrideProgramEntryLabel</name>
@@ -978,7 +979,7 @@
                 </option>
                 <option>
                     <name>IlinkTrustzoneImportLibraryOut</name>
-                    <state>Lab2_import_lib.o</state>
+                    <state>Labr4_import_lib.o</state>
                 </option>
                 <option>
                     <name>OILinkExtraOption</name>
@@ -2087,30 +2088,9 @@
         </settings>
     </configuration>
     <file>
-        <name>$PROJ_DIR$\blinky.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\cmsis_compiler.h</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\cmsis_iccarm.h</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\cmsis_version.h</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\core_cm4.h</name>
+        <name>$PROJ_DIR$\main.cpp</name>
     </file>
     <file>
         <name>$PROJ_DIR$\startup_ewarm.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\..\Lab4\system_TM4C1294.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\..\Lab4\system_TM4C1294.h</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\..\Lab4\TM4C1294NCPDT.h</name>
     </file>
 </project>
