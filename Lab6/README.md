@@ -25,7 +25,9 @@ Em uma aplicação que possui várias threads é necessário registrar o espaço
 
 ![tx_byte_pool]()
 
-#### Escalonamento
+---
+
+### Escalonamento
 
 a) Escalonamento por time-slice de 50 ms. Todas as tarefas com mesma prioridade.
 
@@ -51,5 +53,7 @@ e) Mutex com herança de prioridade.
 
 # Referências
 
-- Descrição dos serviços do Azure RTOS ThreadX SMP - https://docs.microsoft.com/pt-br/azure/rtos/threadx/threadx-smp/chapter4#tx_thread_create
+- Descrição dos serviços do Azure RTOS ThreadX SMP - https://docs.microsoft.com/en-us/azure/rtos/threadx/chapter4
 - Medição de tempo das funções baseadas em ThreadX - https://en-support.renesas.com/knowledgeBase/18539139
+- Descrição do serviço tx_thread_create - https://docs.microsoft.com/en-us/azure/rtos/threadx/chapter4#tx_thread_create
+- Descrição do serviço tx_byte_pool_create - https://docs.microsoft.com/en-us/azure/rtos/threadx/chapter4#tx_byte_pool_create
