@@ -7,7 +7,7 @@
 - Aluno: Luka Takeshi Kato
 - Email: luka@alunos.utfpr.edu.br
 
-# Lab4 - Comunicação Serial
+# Lab5 - ThreadX
 #### Objetivo
 Portar para a Tiva o projeto exemplo do ThreadX.
 
