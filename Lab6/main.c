@@ -9,28 +9,27 @@
 #define STACK_SIZE 1024 
 #define BYTE_POOL_SIZE 9120
 
-UCHAR                   byte_pool_memory[BYTE_POOL_SIZE];
+UCHAR byte_pool_memory[BYTE_POOL_SIZE];
 
-TX_THREAD               thread1;
-TX_THREAD               thread2;
-TX_THREAD               thread3;
+TX_THREAD thread1;
+TX_THREAD thread2;
+TX_THREAD thread3;
 
 TX_BYTE_POOL byte_pool;
 UINT status;
 
-void thread_led_1(ULONG thread_input);
-void thread_led_2(ULONG thread_input);
-void thread_led_3(ULONG thread_input);
+void thread_1(ULONG thread_input);
+void thread_2(ULONG thread_input);
+void thread_3(ULONG thread_input);
 
-void led_setup(void);
+void setup(void);
 
-int main()
-{
-   led_setup();
+int main() {
+   setup();
    tx_kernel_enter();
 }
 
-void led_setup(void) {
+void setup(void) {
   // Port N configuration
    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPION);
    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPION)) {}
@@ -44,7 +43,7 @@ void led_setup(void) {
 }
 
 void tx_application_define(void *first_unused_memory) {
-   CHAR    *pointer = TX_NULL;
+   CHAR *pointer = TX_NULL;
    
    status = tx_byte_pool_create(&byte_pool, "Block of memory", byte_pool_memory, BYTE_POOL_SIZE);
 
@@ -53,7 +52,7 @@ void tx_application_define(void *first_unused_memory) {
    status = tx_thread_create(
       &thread1,
       "thread 1",
-      thread_led_1,
+      thread_1,
       30,
       pointer,
       STACK_SIZE,
@@ -68,7 +67,7 @@ void tx_application_define(void *first_unused_memory) {
    status = tx_thread_create(
       &thread2,
       "thread 2",
-      thread_led_2,
+      thread_2,
       30,
       pointer,
       STACK_SIZE,
@@ -83,7 +82,7 @@ void tx_application_define(void *first_unused_memory) {
    status = tx_thread_create(
       &thread3,
       "thread 3",
-      thread_led_3,
+      thread_3,
       30,
       pointer,
       STACK_SIZE, 
@@ -97,7 +96,7 @@ void tx_application_define(void *first_unused_memory) {
 
 }
 
-void thread_led_1(ULONG thread_input) {
+void thread_1(ULONG thread_input) {
    uint32_t ui32Loop = 0;
    uint32_t blink;
  
@@ -130,7 +129,7 @@ void thread_led_1(ULONG thread_input) {
 }
 
 
-void thread_led_2 (ULONG thread_input) {
+void thread_2(ULONG thread_input) {
    uint32_t ui32Loop = 0;
    uint32_t blink;
 
@@ -158,7 +157,7 @@ void thread_led_2 (ULONG thread_input) {
 }
 
 
-void thread_led_3(ULONG thread_input) {
+void thread_3(ULONG thread_input) {
    uint32_t ui32Loop = 0;
    uint32_t blink;
    
