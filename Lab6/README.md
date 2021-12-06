@@ -7,9 +7,9 @@
 - Aluno: Luka Takeshi Kato
 - Email: luka@alunos.utfpr.edu.br
 
-# Lab4 - Comunicação Serial
+# Lab6 - Escalonamento
 #### Objetivo
-Portar para a Tiva o projeto exemplo do ThreadX.
+Criar um conjunto de 3 tarefas com temporizações conhecidas. Experimentar variações de algoritmos de escalonamento no ThreadX.
 
 #### Projeto
 
