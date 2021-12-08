@@ -13,52 +13,47 @@ Criar um conjunto de 3 tarefas com temporizações conhecidas. Experimentar vari
 
 #### Projeto
 
-Primeiramente foi compilado o ThreadX em uma biblioteca estática para que ele esteja disponível no nosso código. 
-Para isso basta ir na pasta `/ThreadX/ports/cortex_m4` e escolher em qual compilador irá ser utilizado, como para essa atividade utilizaremos a IDE da IAR que utiliza um compilador próprio, na pasta `/ThreadX/ports/cortex_m4/iar`,  foi compilado o projeto `tx` e `sample_threadx`, e isso gerou o arquivo `tx.a`, que foi incluído no projeto do lab5.
+O algoritmo para esse laboratório é basicamente uma medição de tempo, e para isso, podemos utilizar a função `tx_time_get()` para a obtenção do tempo. Assim, podemos utilizar a função para obter o tempo antes da execução da tarefa, após a execução da tarefa obtemos o tempo novamente. Com isso conseguimos saber o tempo de execução das tarefas.
 
-![txA](https://github.com/lukaltk/lukaltk_CSW41/blob/0508bf7789d9267da4f6386d909aba2cd40f239b/Lab5/screenshots/txA.PNG)
+![tx_get_time]()
 
-Logo após isso foi mapeado o código do ThreadX para o `Preprocessor`.
+Para criar uma thread, podemos utilizar a função `tx_thread_create()` passando os seguintes parâmetros:
 
-![CPreprocessor](https://github.com/lukaltk/lukaltk_CSW41/blob/0508bf7789d9267da4f6386d909aba2cd40f239b/Lab5/screenshots/CPreprocessor.PNG)
+![tx_create]()
 
-E no Linker foi mapeada a biblioteca estática do ThreadX, que foi o arquivo gerado anteriormente (`tx.a`).
+Em uma aplicação que possui várias threads é necessário registrar o espaço de memória que estamos utilizando, caso não seja possível pegar espaços consecutivos, precisamos de um algoritmo para unir os espaços de memórias, a fim de formar um bloco. E para isso podemos utilizar a função `tx_byte_pool_create()`, que é um serviço que cria um bloco de memória em uma área especificada. O jeito mais seguro para criar threads no `ThreadX` é solicitar um bloco de memória onde serão armazenadas as pilhas das threads criadas.
 
-![Linker](https://github.com/lukaltk/lukaltk_CSW41/blob/0508bf7789d9267da4f6386d909aba2cd40f239b/Lab5/screenshots/Linker.PNG)
+![tx_byte_pool]()
 
-Por fim, foi habilitado o plugin ThreadX para a utilização de algumas funções na hora da depuração.
+---
 
-![plugin](https://github.com/lukaltk/lukaltk_CSW41/blob/0508bf7789d9267da4f6386d909aba2cd40f239b/Lab5/screenshots/PluginPNG.PNG)
+### Escalonamento
 
-Podemos observar os nomes das Threads definidos logo no começo do código, assim é possível preencher todos os campos `entry function` da tabela.
+a) Escalonamento por time-slice de 50 ms. Todas as tarefas com mesma prioridade.
 
-![entryFunction](https://user-images.githubusercontent.com/48101913/143154331-84211292-44be-41b8-bd7b-900f863f793d.png)
+![Escalonamento_time-slice]()
 
-Para preencher o `stack size` e `priority` basta utilizarmos o  plugin da `ThreadX`, podemos obter informações sobre as threads durante a depuração com o `pause` que permite ver as informações de cada thread. Por esse motivo, ocorre a pausa da execução do programa e selecionamos o plugin `Thread List`.
+b) Escalonamento sem time-slice e sem preempção. Prioridades estabelecidas no passo 3. A preempção pode ser evitada com o “
+preemption threshold” do ThreadX.
 
-![threadList](https://user-images.githubusercontent.com/48101913/143154692-0404c5ba-5122-45f7-a2eb-c02b719b6cc7.png)
+![Escalonamento_sem_time-slice]()
 
-Para preencher o `auto start` da tabela, basta observar o último parâmetro da função `tx_thread_create()` que é responsável por configurar a thread.
+c) Escalonamento preemptivo por prioridade.
 
-Para preencher o `time slicing` da primeira tabela, foi consultada a documentação do ThreadX, onde podemos consultar qual parâmetro é utilizado para o `time-slice` (tempo que a tarefa executa sem ser interrompida). Conforme mostram as figuras abaixo.
+![Escalonamento_preemptivo]()
 
-![timeSlice](https://github.com/lukaltk/lukaltk_CSW41/blob/0508bf7789d9267da4f6386d909aba2cd40f239b/Lab5/screenshots/timeSlice.PNG)
+d) Implemente um Mutex compartilhado entre T1 e T3. No início de cada job estas tarefas devem solicitar este mutex e liberá-lo no
+final. Use mutex sem herança de prioridade. Observe o efeito na temporização das tarefas.
 
-Parâmetros da **tx_thread_create()**.
+![Escalonamento_mutex compartilhado]()
 
-![tx_create_1](https://github.com/lukaltk/lukaltk_CSW41/blob/0508bf7789d9267da4f6386d909aba2cd40f239b/Lab5/screenshots/tx_create_1.PNG)
+e) Mutex com herança de prioridade.
 
-![tx_create_2](https://github.com/lukaltk/lukaltk_CSW41/blob/0508bf7789d9267da4f6386d909aba2cd40f239b/Lab5/screenshots/tx_create_2.PNG)
-
-![tx_create_3](https://github.com/lukaltk/lukaltk_CSW41/blob/0508bf7789d9267da4f6386d909aba2cd40f239b/Lab5/screenshots/tx_create_3.PNG)
-
-Com os isso, podemos preencher os dados das tabelas:
-
-![tabela1](https://github.com/lukaltk/lukaltk_CSW41/blob/0508bf7789d9267da4f6386d909aba2cd40f239b/Lab5/screenshots/tabela1.PNG)
-
-![tabela2](https://github.com/lukaltk/lukaltk_CSW41/blob/0508bf7789d9267da4f6386d909aba2cd40f239b/Lab5/screenshots/tabela2.PNG)
+![Escalonamento_mutex_herança_prioridade]()
 
 # Referências
 
-- Descrição dos serviços do Azure RTOS ThreadX SMP - https://docs.microsoft.com/pt-br/azure/rtos/threadx/threadx-smp/chapter4#tx_thread_create
-
+- Descrição dos serviços do Azure RTOS ThreadX SMP - https://docs.microsoft.com/en-us/azure/rtos/threadx/chapter4
+- Medição de tempo das funções baseadas em ThreadX - https://en-support.renesas.com/knowledgeBase/18539139
+- Descrição do serviço tx_thread_create - https://docs.microsoft.com/en-us/azure/rtos/threadx/chapter4#tx_thread_create
+- Descrição do serviço tx_byte_pool_create - https://docs.microsoft.com/en-us/azure/rtos/threadx/chapter4#tx_byte_pool_create
